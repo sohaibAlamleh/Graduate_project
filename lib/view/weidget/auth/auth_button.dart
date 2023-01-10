@@ -10,7 +10,7 @@ class AuthButton extends StatelessWidget {
 
   void showSnackBar(String text) {
     Get.snackbar(
-      'confirm send message',
+      'confirm send message'.tr,
       text,
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.green,
@@ -33,9 +33,7 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        showSnackBar(text);
-      },
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: Get.isDarkMode ? Colors.red : mainColor,
           minimumSize: const Size(360, 50)),

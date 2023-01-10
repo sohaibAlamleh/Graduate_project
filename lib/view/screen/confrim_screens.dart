@@ -45,7 +45,7 @@ class _ConfirmScreensState extends State<ConfirmScreens> {
                       controller.decrementAdult();
                     });
                   },
-                  text: "Adult",
+                  text: "Adult".tr,
                   x: controller.adult,
                 ),
                 SizedBox(
@@ -62,7 +62,7 @@ class _ConfirmScreensState extends State<ConfirmScreens> {
                       controller.decrementChild();
                     });
                   },
-                  text: "SpecificChild",
+                  text: "SpecificChild".tr,
                   x: controller.child,
                 ),
                 SizedBox(
@@ -79,7 +79,7 @@ class _ConfirmScreensState extends State<ConfirmScreens> {
                       controller.decrementKids();
                     });
                   },
-                  text: "SpecificKids",
+                  text: "SpecificKids".tr,
                   x: controller.kids,
                 ),
               ],
@@ -120,14 +120,14 @@ class Boat extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const TextUtils(
-                          text: "price",
+                      TextUtils(
+                          text: "price".tr,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                           textDecoration: TextDecoration.none),
                       TextUtils(
-                          text: "$total Jd",
+                          text: "$total${"Jd".tr}",
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -143,12 +143,12 @@ class Boat extends StatelessWidget {
                         backgroundColor: MaterialStateProperty.all<Color>(
                             Get.isDarkMode ? Colors.red : Colors.blue)),
                     onPressed: () {
-                      Get.to(CreditCard());
+                      Get.to(const CreditCard());
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Pay"),
+                        Text("Pay".tr),
                       ],
                     ),
                   ),

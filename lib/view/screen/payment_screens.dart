@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:get/get.dart';
 
 import '../../utils/theme.dart';
-
 
 class CreditCard extends StatefulWidget {
   const CreditCard({Key? key}) : super(key: key);
@@ -23,9 +23,20 @@ class _CreditCardState extends State<CreditCard> {
   OutlineInputBorder? border;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  void showSnackBar(String message) {
+    final SnackBar snackBar = SnackBar(
+      content: Text('confirm payment'.tr),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(snackBar.toString()),
+      ),
+    );
+  }
+
   @override
   void initState() {
-    border = OutlineInputBorder(
+    border = const OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.grey,
         width: 2.0,
@@ -33,25 +44,24 @@ class _CreditCardState extends State<CreditCard> {
     );
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Credit Card View Demo',
+      title: 'Flutter Credit Card View Demo'.tr,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-
-
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
           decoration: BoxDecoration(
             image: !useBackgroundImage
                 ? const DecorationImage(
-              image: ExactAssetImage('assets/bg.png'),
-              fit: BoxFit.fill,
-            )
+                    image: ExactAssetImage(''),
+                    fit: BoxFit.fill,
+                  )
                 : null,
             color: mainColor,
           ),
@@ -63,19 +73,18 @@ class _CreditCardState extends State<CreditCard> {
                 ),
                 CreditCardWidget(
                   glassmorphismConfig:
-                  useGlassMorphism ? Glassmorphism.defaultConfig() : null,
+                      useGlassMorphism ? Glassmorphism.defaultConfig() : null,
                   cardNumber: cardNumber,
                   expiryDate: expiryDate,
                   cardHolderName: cardHolderName,
                   cvvCode: cvvCode,
-                  bankName: 'Axis Bank',
+                  bankName: 'Axis Bank'.tr,
                   showBackView: isCvvFocused,
                   obscureCardNumber: true,
                   obscureCardCvv: true,
                   isHolderNameVisible: true,
                   cardBgColor: Colors.red,
-                  backgroundImage:
-                  useBackgroundImage ? 'assets/card_bg.png' : null,
+                  backgroundImage: useBackgroundImage ? '' : null,
                   isSwipeGestureEnabled: true,
                   onCreditCardWidgetChange:
                       (CreditCardBrand creditCardBrand) {},
@@ -83,7 +92,7 @@ class _CreditCardState extends State<CreditCard> {
                     CustomCardTypeIcon(
                       cardType: CardType.mastercard,
                       cardImage: Image.asset(
-                        'assets/mastercard.png',
+                        '',
                         height: 48,
                         width: 48,
                       ),
@@ -108,8 +117,8 @@ class _CreditCardState extends State<CreditCard> {
                           themeColor: Colors.blue,
                           textColor: Colors.white,
                           cardNumberDecoration: InputDecoration(
-                            labelText: 'Number',
-                            hintText: 'XXXX XXXX XXXX XXXX',
+                            labelText: 'Number'.tr,
+                            hintText: 'XXXX XXXX XXXX XXXX'.tr,
                             hintStyle: const TextStyle(color: Colors.white),
                             labelStyle: const TextStyle(color: Colors.white),
                             focusedBorder: border,
@@ -120,23 +129,23 @@ class _CreditCardState extends State<CreditCard> {
                             labelStyle: const TextStyle(color: Colors.white),
                             focusedBorder: border,
                             enabledBorder: border,
-                            labelText: 'Expired Date',
-                            hintText: 'XX/XX',
+                            labelText: 'Expired Date'.tr,
+                            hintText: 'XX/XX'.tr,
                           ),
                           cvvCodeDecoration: InputDecoration(
                             hintStyle: const TextStyle(color: Colors.white),
                             labelStyle: const TextStyle(color: Colors.white),
                             focusedBorder: border,
                             enabledBorder: border,
-                            labelText: 'CVV',
-                            hintText: 'XXX',
+                            labelText: 'CVV'.tr,
+                            hintText: 'XXX'.tr,
                           ),
                           cardHolderDecoration: InputDecoration(
                             hintStyle: const TextStyle(color: Colors.white),
                             labelStyle: const TextStyle(color: Colors.white),
                             focusedBorder: border,
                             enabledBorder: border,
-                            labelText: 'Card Holder',
+                            labelText: 'Card Holder'.tr,
                           ),
                           onCreditCardModelChange: onCreditCardModelChange,
                         ),
@@ -146,9 +155,9 @@ class _CreditCardState extends State<CreditCard> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            const Text(
-                              'Glassmorphism',
-                              style: TextStyle(
+                            Text(
+                              'Glassmorphism'.tr,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                               ),
@@ -167,9 +176,9 @@ class _CreditCardState extends State<CreditCard> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            const Text(
-                              'Card Image',
-                              style: TextStyle(
+                            Text(
+                              'Card Image'.tr,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                               ),
@@ -188,32 +197,39 @@ class _CreditCardState extends State<CreditCard> {
                         const SizedBox(
                           height: 20,
                         ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                        MaterialButton(
+                          color: Get.isDarkMode ? mainColor : mainColor,
+                          textColor: Colors.white,
+                          onPressed: () {
+                            showSnackBar(context.toString());
+                          },
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              backgroundColor: const Color(0xff1b447b),
                             ),
-                            backgroundColor: const Color(0xff1b447b),
-                          ),
-                          child: Container(
-                            margin: const EdgeInsets.all(12),
-                            child: const Text(
-                              'Validate',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'halter',
-                                fontSize: 14,
-                                package: 'flutter_credit_card',
+                            child: Container(
+                              margin: const EdgeInsets.all(12),
+                              child: Text(
+                                'Validate'.tr,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'halter'.tr,
+                                  fontSize: 14,
+                                  package: 'flutter_credit_card'.tr,
+                                ),
                               ),
                             ),
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                print('valid!'.tr);
+                              } else {
+                                print('invalid!'.tr);
+                              }
+                            },
                           ),
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              print('valid!');
-                            } else {
-                              print('invalid!');
-                            }
-                          },
                         ),
                       ],
                     ),
@@ -237,7 +253,3 @@ class _CreditCardState extends State<CreditCard> {
     });
   }
 }
-
-
-
-

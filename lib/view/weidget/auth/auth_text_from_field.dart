@@ -1,4 +1,6 @@
+import 'package:boat_rent_project/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AuthTextFormFailed extends StatelessWidget {
   final TextEditingController controller;
@@ -27,7 +29,7 @@ class AuthTextFormFailed extends StatelessWidget {
       keyboardType: TextInputType.text,
       validator: (value) => validator(value),
       decoration: InputDecoration(
-        fillColor: Colors.grey.shade200,
+        fillColor: Get.isDarkMode ? darkColor : mainColor,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,

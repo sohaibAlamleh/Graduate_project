@@ -111,14 +111,14 @@ class _SettingScreensState extends State<SettingScreens> {
                       Text(
                         FirebaseAuth.instance.currentUser != null
                             ? FirebaseAuth.instance.currentUser!.displayName!
-                            : 'user name',
+                            : 'user name'.tr,
                         style: TextStyle(
                             color: Get.isDarkMode ? whiteColor : Colors.grey),
                       ),
                       Text(
                         FirebaseAuth.instance.currentUser != null
                             ? FirebaseAuth.instance.currentUser!.email!
-                            : 'user email',
+                            : 'user email'.tr,
                         style: TextStyle(
                             color: Get.isDarkMode ? whiteColor : Colors.grey),
                       )
@@ -130,7 +130,7 @@ class _SettingScreensState extends State<SettingScreens> {
                 height: 20,
               ),
               Text(
-                'phone number  ',
+                'phone number  '.tr,
                 style: TextStyle(
                     fontSize: 15,
                     color: Get.isDarkMode ? whiteColor : Colors.grey),
@@ -145,7 +145,7 @@ class _SettingScreensState extends State<SettingScreens> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Dark Mode',
+                      'Dark Mode'.tr,
                       style: TextStyle(
                           color: Get.isDarkMode ? whiteColor : Colors.black,
                           fontSize: 15),
@@ -174,14 +174,14 @@ class _SettingScreensState extends State<SettingScreens> {
                       const SizedBox(
                         width: 20,
                       ),
-                      Text('Change Language',
+                      Text('Change Language'.tr,
                           style: TextStyle(
                               color: Get.isDarkMode ? whiteColor : Colors.black,
                               // fontWeight: FontWeight.bold,
                               fontSize: 15)),
                       const SizedBox(),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: LanguageWidget(),
                       ),
                     ]),
@@ -204,22 +204,22 @@ class _SettingScreensState extends State<SettingScreens> {
                 return TextButton(
                     onPressed: () {
                       Get.defaultDialog(
-                          title: 'Log out From App',
+                          title: 'Log out From App'.tr,
                           titleStyle: TextStyle(
                               fontSize: 18,
                               color: Get.isDarkMode ? whiteColor : Colors.white,
                               fontWeight: FontWeight.bold),
-                          middleText: 'Are you sure you need logout',
+                          middleText: 'Are you sure you need logout'.tr,
                           middleTextStyle: TextStyle(
                               fontSize: 18,
                               color: Get.isDarkMode ? whiteColor : Colors.white,
                               fontWeight: FontWeight.bold),
                           backgroundColor: Colors.grey,
                           radius: 10,
-                          textCancel: 'No',
+                          textCancel: 'No'.tr,
                           cancelTextColor:
                               Get.isDarkMode ? whiteColor : Colors.black,
-                          textConfirm: 'yes',
+                          textConfirm: 'yes'.tr,
                           confirmTextColor:
                               Get.isDarkMode ? whiteColor : Colors.black,
                           onCancel: () {
@@ -231,7 +231,7 @@ class _SettingScreensState extends State<SettingScreens> {
                           buttonColor: Get.isDarkMode ? mainColor : mainColor);
                       //controlar.signOutFromApp();
                     },
-                    child: Text('Log Out ',
+                    child: Text('Log Out '.tr,
                         style: TextStyle(
                             color: Get.isDarkMode ? whiteColor : Colors.grey)));
               }),

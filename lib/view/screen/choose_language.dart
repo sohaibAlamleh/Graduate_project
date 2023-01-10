@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,13 +12,11 @@ class ChooseLanguage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-       backgroundColor: Get.isDarkMode? buttonColor:mainColor,
-    body: Choose(),
-    )
-    );
+      backgroundColor: Get.isDarkMode ? buttonColor : mainColor,
+      body: Choose(),
+    ));
   }
 }
-
 
 class Choose extends StatefulWidget {
   const Choose({Key? key}) : super(key: key);
@@ -34,15 +31,16 @@ class _ChooseState extends State<Choose> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Get.isDarkMode?Image.asset('assets/images/splash.jpg')
+        Get.isDarkMode
+            ? Image.asset('assets/images/splash.jpg')
             : Image.asset('assets/images/boat-logo.jpg'),
         const Padding(
           padding: EdgeInsets.all(20),
         ),
-        const Center(
+        Center(
           child: Text(
-            'Hello',
-            style: TextStyle(
+            'Hello'.tr,
+            style: const TextStyle(
                 color: whiteColor,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -50,17 +48,17 @@ class _ChooseState extends State<Choose> {
           ),
         ),
         const SizedBox(height: 50),
-        const Center(
+        Center(
           child: Text(
-            'Choose Language',
-            style: TextStyle(
+            'Choose Language'.tr,
+            style: const TextStyle(
               color: whiteColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
-       const SizedBox(
+        const SizedBox(
           height: 50,
         ),
         Row(
@@ -68,18 +66,22 @@ class _ChooseState extends State<Choose> {
           children: [
             InkWell(
               onTap: () {
-                Get.offNamed(Routs.lognin_screens);
+                Get.offNamed(Routs.lognin_screens.tr);
+                //specific language
+                Get.updateLocale(const Locale('ar'));
               },
-              child: AuthImageAssets(
+              child: const AuthImageAssets(
                   image: 'assets/images/aribic.png', width: 90, height: 80),
             ),
             const SizedBox(
               width: 30,
             ),
             InkWell(
-              onTap: () {Get.offNamed(Routs.lognin_screens);
+              onTap: () {
+                Get.offNamed(Routs.lognin_screens);
+                Get.updateLocale(const Locale('en'));
               },
-              child: AuthImageAssets(
+              child: const AuthImageAssets(
                   image: 'assets/images/english.png', width: 100, height: 100),
             )
           ],

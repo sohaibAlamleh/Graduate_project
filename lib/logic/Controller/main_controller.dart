@@ -9,5 +9,5 @@ class MainController extends GetxController {
   RxInt currnetIndex = 0.obs;
 
   final tabs = [HomeScreens(), FavoritesScreens(), SettingScreens()].obs;
-  final title = ["Boat Rent", "Favorites", "Setting"].obs;
+  final title = ["Boat Rent".tr, "Favorites".tr, "Setting".tr].obs;
 }

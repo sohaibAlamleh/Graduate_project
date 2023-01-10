@@ -1,4 +1,3 @@
-
 import 'package:boat_rent_project/logic/Controller/table_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -6,34 +5,28 @@ import 'package:get/get.dart';
 
 import '../../../logic/Controller/boat_controller.dart';
 
-
-
 class BoatCategoryListItem extends StatelessWidget {
-   BoatCategoryListItem({Key? key}) : super(key: key);
+  BoatCategoryListItem({Key? key}) : super(key: key);
   final controller = Get.put(TableController());
   @override
   Widget build(BuildContext context) {
     return GetBuilder<TableController>(
-      builder: (controller)=> Container(
+      builder: (controller) => Container(
         height: 100,
-
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: [
-           CategoryListItem(
-            categoryIcon:Icons.sailing,
-            categoryName:"controller.",
-            availability:3,
-            selected:false,
-
-
-           ), CategoryListItem(
-              categoryIcon:Icons.sailing,
-              categoryName:'Hot',
-              availability:3,
-              selected:false,
-
-
+            CategoryListItem(
+              categoryIcon: Icons.sailing,
+              categoryName: "controller.".tr,
+              availability: 3,
+              selected: false,
+            ),
+            CategoryListItem(
+              categoryIcon: Icons.sailing,
+              categoryName: 'Hot'.tr,
+              availability: 3,
+              selected: false,
             )
           ],
         ),
@@ -41,39 +34,34 @@ class BoatCategoryListItem extends StatelessWidget {
     );
   }
 }
+
 class CategoryListItem extends StatelessWidget {
   final IconData categoryIcon;
   final String categoryName;
   final int availability;
   final bool selected;
 
-   CategoryListItem({
-   required this.categoryIcon,
-   required this.categoryName,
-   required this.availability,
-   required this.selected,
-  Key? key}) : super(key: key);
+  CategoryListItem(
+      {required this.categoryIcon,
+      required this.categoryName,
+      required this.availability,
+      required this.selected,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<TableController>(
       builder: (controller) => Container(
         width: 70,
-
-
-
         margin: EdgeInsets.only(right: 15),
-
         decoration: BoxDecoration(
-         borderRadius: BorderRadius.circular(50),
-         color: selected ? Color(0xfffeb324) : Colors.white,
-         border: Border.all(
-           color: selected ? Colors.transparent : Colors.grey,
-           width: 1.5,
-
-         ),
-
-
+          borderRadius: BorderRadius.circular(50),
+          color: selected ? Color(0xfffeb324) : Colors.white,
+          border: Border.all(
+            color: selected ? Colors.transparent : Colors.grey,
+            width: 1.5,
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,33 +69,35 @@ class CategoryListItem extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(
-                  color:selected ? Colors.transparent:Colors.blueGrey
-                   ,width: 1.5
-                )
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(
+                      color: selected ? Colors.transparent : Colors.blueGrey,
+                      width: 1.5)),
+              child: Icon(
+                categoryIcon,
+                color: Colors.black,
+                size: 15,
               ),
-              child: Icon(categoryIcon,color: Colors.black  ,size: 15,),
-
             ),
-            SizedBox(height: 10,),
-            Text(categoryName,
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: Colors.black
-            ),),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              categoryName,
+              style:
+                  TextStyle(fontWeight: FontWeight.w700, color: Colors.black),
+            ),
             Container(
               margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
               width: 1.5,
-
               color: Colors.black26,
             ),
-            Text(availability.toString(),
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-              color: Colors.black
-            ),)
+            Text(
+              availability.toString(),
+              style:
+                  TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
+            )
           ],
         ),
       ),

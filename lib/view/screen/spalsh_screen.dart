@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,37 +18,33 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3),navigatetohome);
+    Timer(Duration(seconds: 3), navigatetohome);
   }
 
- void navigatetohome()  {
-
+  void navigatetohome() {
     Navigator.pushAndRemoveUntil(
-    context,
-     MaterialPageRoute(builder: (context)=> ChooseLanguage()),
-        (Route<dynamic>route )=>false
-    );
+        context,
+        MaterialPageRoute(builder: (context) => const ChooseLanguage()),
+        (Route<dynamic> route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: mainColor,
+      backgroundColor: mainColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
           Center(
-              child:Get.isDarkMode?Image.asset('assets/images/splash.jpg')
-             : Image.asset('assets/images/boat-logo.jpg')
-
-          )
-          ,
+              child: Get.isDarkMode
+                  ? Image.asset('assets/images/splash.jpg')
+                  : Image.asset('assets/images/boat-logo.jpg')),
+          // ignore: prefer_const_constructors
           CircularProgressIndicator(
             color: Colors.white,
           ),
         ],
-      ),//     primaryColor: mainColor,
+      ), //     primaryColor: mainColor,
     );
   }
 }

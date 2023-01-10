@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,13 +34,13 @@ class CheackWidghet extends StatelessWidget {
                     : Container()),
           ),
           TextUtils(
-              text: '  I accept ',
+              text: '  I accept '.tr,
               fontSize: 16,
               fontWeight: FontWeight.normal,
               color: Get.isDarkMode ? Colors.white : Colors.black,
               textDecoration: TextDecoration.none),
           TextUtils(
-              text: 'Terms & conditions ',
+              text: 'Terms & conditions '.tr,
               fontSize: 16,
               fontWeight: FontWeight.normal,
               color: Get.isDarkMode ? Colors.white : Colors.black,

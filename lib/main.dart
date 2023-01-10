@@ -1,5 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:boat_rent_project/routes/routes.dart';
+import 'package:boat_rent_project/utils/language/localization.dart';
+import 'package:boat_rent_project/utils/my_string.dart';
 import 'package:boat_rent_project/utils/theme.dart';
 import 'package:boat_rent_project/view/screen/choose_language.dart';
 
@@ -23,8 +25,19 @@ void main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    LocalizationApp();
+  }
 
   // This widget is the root of your application.
   @override
@@ -37,6 +50,9 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => GetMaterialApp(
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
+              locale: Locale(GetStorage().read<String>("lang").toString()),
+              fallbackLocale: Locale(eng),
+              translations: LocalizationApp(),
               theme: ThemesApp.light,
               darkTheme: ThemesApp.dark,
               themeMode: ThemeController().themeDataGet,

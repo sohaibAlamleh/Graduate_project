@@ -24,7 +24,7 @@ class BoatController extends GetxController {
   List<BoatModel> _favoriteList = [];
   List<BoatModel> get favoriteList => _favoriteList;
   var storage = GetStorage();
-
+  late final fireStore = FirebaseFirestore.instance;
   late String COLLECTION_NAME;
   late CollectionReference collectionReference;
   BoatController() {
@@ -83,12 +83,15 @@ class BoatController extends GetxController {
     if (existIndex >= 0) {
       _favoriteList.removeAt(existIndex);
       await storage.remove('isFavourites');
+      update();
     } else {
       favoriteList
           .add(boatModel.firstWhere((element) => element.name == prodectid));
 
       await storage.write('isFavourites', favoriteList);
+      update();
     }
+
 //print(v);
   }
 

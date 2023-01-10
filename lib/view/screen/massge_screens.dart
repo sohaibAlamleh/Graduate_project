@@ -18,7 +18,7 @@ class _SendMessageState extends State<SendMessage> {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         height: double.infinity,
         color: Get.isDarkMode ? darkColor : Colors.blue.shade50,
         child: Column(
@@ -26,12 +26,12 @@ class _SendMessageState extends State<SendMessage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextUtils(
-                text: "Write Message",
+                text: "Write Message".tr,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Get.isDarkMode ? buttonColor : Colors.grey,
                 textDecoration: TextDecoration.none),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             TextFormField(
@@ -40,19 +40,19 @@ class _SendMessageState extends State<SendMessage> {
               keyboardType: TextInputType.multiline,
               maxLines: 10,
               decoration: InputDecoration(
-                  hintText: "Write Message",
+                  hintText: "Write Message".tr,
                   hintStyle: TextStyle(
                       color: Get.isDarkMode ? whiteColor : Colors.grey),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                           width: 1,
                           color: Colors
                               .blue))), //keyboardType : TextInputType.text,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            AuthButton(text: "Send", onPressed: () {})
+            AuthButton(text: "Send".tr, onPressed: () {})
           ],
         ),
       ),

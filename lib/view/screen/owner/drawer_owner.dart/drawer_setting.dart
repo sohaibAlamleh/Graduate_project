@@ -40,7 +40,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
             Icons.color_lens,
             color: Get.isDarkMode ? whiteColor : mainColor,
           ),
-          title: Text('change theme',
+          title: Text('change theme'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             ThemeController().changesTheme();
@@ -58,7 +58,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
             const SizedBox(
               width: 20,
             ),
-            Text('Dark Mode',
+            Text('Dark Mode'.tr,
                 style: TextStyle(
                     color: Get.isDarkMode ? whiteColor : mainColor,
                     // fontWeight: FontWeight.bold,
@@ -88,13 +88,13 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
           const SizedBox(
             width: 20,
           ),
-          Text('Change Language',
+          Text('Change Language'.tr,
               style: TextStyle(
                   color: Get.isDarkMode ? whiteColor : mainColor,
                   // fontWeight: FontWeight.bold,
                   fontSize: 15)),
           const SizedBox(),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
             child: LanguageWidget(),
           ),
@@ -104,7 +104,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
             Icons.privacy_tip,
             color: Get.isDarkMode ? whiteColor : mainColor,
           ),
-          title: Text('Terms and Conditions',
+          title: Text('Terms and Conditions'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
         ),
         ListTile(
@@ -112,7 +112,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
             Icons.directions_boat_filled_outlined,
             color: Get.isDarkMode ? whiteColor : mainColor,
           ),
-          title: Text('Add Boat',
+          title: Text('Add Boat'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Navigator.of(context).push(
@@ -122,7 +122,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
         ListTile(
           leading: Icon(Icons.favorite,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Favourite',
+          title: Text('Favorites'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
@@ -132,7 +132,7 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
         ListTile(
           leading: Icon(Icons.settings,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Setting',
+          title: Text('Setting'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
@@ -146,25 +146,25 @@ class _DrawerSettingOwnerState extends State<DrawerSettingOwner> {
         ListTile(
           leading: Icon(Icons.logout,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Logout',
+          title: Text('Logout'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Get.defaultDialog(
-                title: 'Log out From App',
+                title: 'Log out From App'.tr,
                 titleStyle: TextStyle(
                     fontSize: 18,
                     color: Get.isDarkMode ? whiteColor : Colors.white,
                     fontWeight: FontWeight.bold),
-                middleText: 'Are you sure you need logout',
+                middleText: 'Are you sure you need logout'.tr,
                 middleTextStyle: TextStyle(
                     fontSize: 18,
                     color: Get.isDarkMode ? whiteColor : Colors.white,
                     fontWeight: FontWeight.bold),
                 backgroundColor: Colors.grey,
                 radius: 10,
-                textCancel: 'No',
+                textCancel: 'No'.tr,
                 cancelTextColor: Get.isDarkMode ? whiteColor : Colors.black,
-                textConfirm: 'yes',
+                textConfirm: 'yes'.tr,
                 confirmTextColor: Get.isDarkMode ? whiteColor : Colors.black,
                 onCancel: () {
                   Get.back();

@@ -5,7 +5,7 @@ class AuthImageAssets extends StatelessWidget {
   final double width;
   final double height;
 
-  AuthImageAssets(
+  const AuthImageAssets(
       {required this.image,
       required this.width,
       required this.height,
@@ -14,12 +14,10 @@ class AuthImageAssets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset(
-        image,
-        width: width,
-        height: height,
-      ),
+    return Image.asset(
+      image,
+      width: width,
+      height: height,
     );
   }
 }

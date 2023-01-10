@@ -112,7 +112,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
                           MaterialPageRoute(
                               builder: (context) => const SendMessage()));
                     },
-                    child: const Text("Massage")),
+                    child: Text("Massage".tr)),
                 MaterialButton(
                     onPressed: () {
                       //  NavigationBar.pop
@@ -124,7 +124,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
                       // Get.to(ConfirmScreens());
                     },
                     color: Get.isDarkMode ? Colors.red : mainColor,
-                    child: const Text("Book Now")),
+                    child: Text("Book Now".tr)),
               ],
             ),
           )

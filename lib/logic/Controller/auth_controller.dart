@@ -217,7 +217,7 @@ class AuthController extends GetxController {
       update();
     } catch (error) {
       print(error);
-      Get.snackbar("Error", error.toString(),
+      Get.snackbar("Error".tr, error.toString(),
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.green,
           colorText: Colors.white);

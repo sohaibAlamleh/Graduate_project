@@ -37,7 +37,7 @@ class MainScreens extends StatelessWidget {
                 ))
           ],
           title: Text(
-            controller.title[controller.currnetIndex.value],
+            controller.title[controller.currnetIndex.value].tr,
             style: TextStyle(
               color: Get.isDarkMode ? whiteColor : Colors.white,
             ),

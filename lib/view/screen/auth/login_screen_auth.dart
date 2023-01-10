@@ -34,13 +34,14 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Get.isDarkMode ? buttonColor : Colors.white,
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 1.3,
               child: Padding(
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       children: [
                         TextUtils(
-                            text: 'Log ',
+                            text: "Log".tr,
                             fontSize: 28,
                             fontWeight: FontWeight.w500,
                             color: Get.isDarkMode ? buttonColor : mainColor,
@@ -59,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 3,
                         ),
                         TextUtils(
-                            text: 'In',
+                            text: "In".tr,
                             fontSize: 28,
                             fontWeight: FontWeight.w500,
                             color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -75,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: false,
                       validator: (value) {
                         if (!RegExp(validationEmail).hasMatch(value)) {
-                          return ('invalid email');
+                          return ('invalid email'.tr);
                         } else {
                           return null;
                         }
@@ -92,9 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               size: 30,
                             ),
                       suffixIcon: const Text(''),
-                      hintText: "Email",
+                      hintText: 'Email'.tr,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     GetBuilder<AuthController>(builder: (_) {
@@ -103,18 +104,19 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: controller.isvisibility ? false : true,
                         validator: (value) {
                           if (value.toString().length < 6) {
-                            return ('password should be long or equal to 6 characters');
+                            return ('password should be long or equal to 6 characters'
+                                .tr);
                           } else {
                             return null;
                           }
                         },
                         prefixIcon: Get.isDarkMode
-                            ? Icon(
+                            ? const Icon(
                                 Icons.lock,
                                 color: buttonColor,
                                 size: 30,
                               )
-                            : Icon(
+                            : const Icon(
                                 Icons.lock,
                                 color: mainColor,
                                 size: 30,
@@ -124,23 +126,24 @@ class _LoginScreenState extends State<LoginScreen> {
                               controller.visibility();
                             },
                             icon: controller.isvisibility
-                                ? Icon(
+                                ? const Icon(
                                     Icons.visibility_off,
                                     color: Colors.black,
                                   )
+                                // ignore: prefer_const_constructors
                                 : Icon(
                                     Icons.visibility,
                                     color: Colors.black,
                                   )),
-                        hintText: "Password",
+                        hintText: "Password".tr,
                       );
                     }),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FlutterSwitch(
-                          activeText: "Owner",
-                          inactiveText: "Renter",
+                          activeText: "Owner".tr,
+                          inactiveText: "Renter".tr,
                           value: status,
                           valueFontSize: 16.0,
                           inactiveColor: Colors.green,
@@ -160,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Get.toNamed(Routs.forget_poasswored_screens);
                             },
                             child: TextUtils(
-                                text: 'Forget password ?',
+                                text: 'Forget password ?'.tr,
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
                                 color: Get.isDarkMode
@@ -174,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     GetBuilder<AuthController>(builder: (_) {
                       return AuthButton(
-                          text: 'Log In',
+                          text: 'Log In'.tr,
                           onPressed: () {
                             // if (formKey.currentState?.validate() != null) {
                             String email = emailController.text.trim();
@@ -188,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 20,
                     ),
                     TextUtils(
-                        text: 'OR',
+                        text: 'OR'.tr,
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
                         color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -222,8 +225,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             ContainerUnder(
-              text: "Don't Have an Account ?",
-              textundline: 'Sign Up',
+              text: "Don't Have an Account ?".tr,
+              textundline: 'Sign Up'.tr,
               onPressed: () {
                 Get.offNamed(Routs.signup_screens);
               },

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,18 +26,19 @@ class _ForgetPasswordScreensState extends State<ForgetPasswordScreens> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: true,
           elevation: 0,
           backgroundColor: Get.isDarkMode ? buttonColor : Colors.white,
           title: Text(
-            'Forget Password',
+            'Forget Password'.tr,
             style: TextStyle(color: Get.isDarkMode ? mainColor : darkColor),
           ),
           leading: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
             ),
             color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -49,7 +49,7 @@ class _ForgetPasswordScreensState extends State<ForgetPasswordScreens> {
           key: fromkey,
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
                   Align(
@@ -66,11 +66,12 @@ class _ForgetPasswordScreensState extends State<ForgetPasswordScreens> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
-                    'if you want to recover your account,than pleas provide your email ID below ..',
+                    'if you want to recover your account,than pleas provide your email ID below ..'
+                        .tr,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
@@ -90,7 +91,7 @@ class _ForgetPasswordScreensState extends State<ForgetPasswordScreens> {
                     obscureText: false,
                     validator: (value) {
                       if (!RegExp(validationEmail).hasMatch(value)) {
-                        return ('invalid email');
+                        return ('invalid email'.tr);
                       } else {
                         return null;
                       }
@@ -107,14 +108,14 @@ class _ForgetPasswordScreensState extends State<ForgetPasswordScreens> {
                             size: 30,
                           ),
                     suffixIcon: const Text(''),
-                    hintText: "Email",
+                    hintText: "Email".tr,
                   ),
                   SizedBox(
                     height: 50,
                   ),
                   GetBuilder<AuthController>(builder: (_) {
                     return AuthButton(
-                        text: 'Send',
+                        text: 'Send'.tr,
                         onPressed: () {
                           if (fromkey.currentState!.validate()) {
                             String email = emailconontroller.text.trim();

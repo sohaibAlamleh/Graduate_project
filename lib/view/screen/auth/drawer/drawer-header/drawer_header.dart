@@ -104,7 +104,7 @@ class _DrawerHeader1State extends State<DrawerHeader1> {
               Text(
                   FirebaseAuth.instance.currentUser != null
                       ? FirebaseAuth.instance.currentUser!.displayName!
-                      : 'user name',
+                      : 'user name'.tr,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -113,7 +113,7 @@ class _DrawerHeader1State extends State<DrawerHeader1> {
               Text(
                 FirebaseAuth.instance.currentUser != null
                     ? FirebaseAuth.instance.currentUser!.email!
-                    : 'user email',
+                    : 'user email'.tr,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(

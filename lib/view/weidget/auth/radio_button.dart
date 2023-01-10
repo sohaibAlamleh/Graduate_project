@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:get/get.dart';
 
 class RadioButton extends StatefulWidget {
   const RadioButton({Key? key}) : super(key: key);
@@ -16,21 +15,20 @@ class _RadioButtonState extends State<RadioButton> {
     return Row(
       children: [
         RadioListTile(
-          title: Text("Male"),
-          value: "male",
+          title: Text("Male".tr),
+          value: "male".tr,
           groupValue: gender,
-          onChanged: (value){
+          onChanged: (value) {
             setState(() {
               gender = value.toString();
             });
           },
         ),
-
         RadioListTile(
-          title: Text("Female"),
-          value: "female",
+          title: Text("Female".tr),
+          value: "female".tr,
           groupValue: gender,
-          onChanged: (value){
+          onChanged: (value) {
             setState(() {
               gender = value.toString();
             });

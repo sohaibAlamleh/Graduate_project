@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MessageConfirm extends StatelessWidget {
   const MessageConfirm({super.key});
@@ -9,12 +10,12 @@ class MessageConfirm extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: const Text('Confirm'),
-          content: const Text('message is send'),
+          title: Text('Confirm'.tr),
+          content: Text('message is send'.tr),
           actions: <Widget>[
             TextButton(
-              onPressed: () => Navigator.pop(context, 'OK'),
-              child: const Text('OK'),
+              onPressed: () => Navigator.pop(context, 'OK'.tr),
+              child: Text('OK'.tr),
             ),
           ],
         ),

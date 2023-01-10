@@ -54,7 +54,7 @@ class _DrawerSettingState extends State<DrawerSetting> {
             const SizedBox(
               width: 20,
             ),
-            Text('Dark Mode',
+            Text('Dark Mode'.tr,
                 style: TextStyle(
                     color: Get.isDarkMode ? whiteColor : mainColor,
                     // fontWeight: FontWeight.bold,
@@ -84,14 +84,14 @@ class _DrawerSettingState extends State<DrawerSetting> {
           const SizedBox(
             width: 20,
           ),
-          Text('Change Language',
+          Text('Change Language'.tr,
               style: TextStyle(
                   color: Get.isDarkMode ? whiteColor : mainColor,
                   // fontWeight: FontWeight.bold,
                   fontSize: 15)),
           const SizedBox(),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: LanguageWidget(),
           ),
         ]),
@@ -108,13 +108,13 @@ class _DrawerSettingState extends State<DrawerSetting> {
             Icons.privacy_tip,
             color: Get.isDarkMode ? whiteColor : mainColor,
           ),
-          title: Text('Terms and Conditions',
+          title: Text('Terms and Conditions'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
         ),
         ListTile(
           leading: Icon(Icons.favorite,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Favourite',
+          title: Text('Favorites'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
@@ -124,7 +124,7 @@ class _DrawerSettingState extends State<DrawerSetting> {
         ListTile(
           leading: Icon(Icons.settings,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Setting',
+          title: Text('Setting'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
@@ -138,25 +138,25 @@ class _DrawerSettingState extends State<DrawerSetting> {
         ListTile(
           leading: Icon(Icons.logout,
               color: Get.isDarkMode ? whiteColor : mainColor),
-          title: Text('Logout',
+          title: Text('Logout'.tr,
               style: TextStyle(color: Get.isDarkMode ? whiteColor : mainColor)),
           onTap: () {
             Get.defaultDialog(
-                title: 'Log out From App',
+                title: 'Log out From App'.tr,
                 titleStyle: TextStyle(
                     fontSize: 18,
                     color: Get.isDarkMode ? whiteColor : Colors.white,
                     fontWeight: FontWeight.bold),
-                middleText: 'Are you sure you need logout',
+                middleText: 'Are you sure you need logout'.tr,
                 middleTextStyle: TextStyle(
                     fontSize: 18,
                     color: Get.isDarkMode ? whiteColor : Colors.white,
                     fontWeight: FontWeight.bold),
                 backgroundColor: Colors.grey,
                 radius: 10,
-                textCancel: 'No',
+                textCancel: 'No'.tr,
                 cancelTextColor: Get.isDarkMode ? whiteColor : Colors.black,
-                textConfirm: 'yes',
+                textConfirm: 'yes'.tr,
                 confirmTextColor: Get.isDarkMode ? whiteColor : Colors.black,
                 onCancel: () {
                   Get.back();

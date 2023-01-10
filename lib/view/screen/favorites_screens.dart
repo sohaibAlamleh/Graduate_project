@@ -35,7 +35,7 @@ class _FavoritesScreensState extends State<FavoritesScreens> {
                   height: 20,
                 ),
                 Text(
-                  "Please,add your favourite",
+                  "Please,add your favourite".tr,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -114,7 +114,7 @@ class _FavoritesScreensState extends State<FavoritesScreens> {
                     height: 10,
                   ),
                   Text(
-                    '\$ $desc',
+                    '\$ $desc'.tr,
                     style: TextStyle(
                         color: Get.isDarkMode ? Colors.white : Colors.black,
                         fontSize: 16,

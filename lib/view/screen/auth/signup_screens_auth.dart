@@ -38,6 +38,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Get.isDarkMode ? buttonColor : Colors.white,
           elevation: 0,
         ),
@@ -57,7 +58,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                         Row(
                           children: [
                             TextUtils(
-                                text: 'Sign',
+                                text: 'Sign'.tr,
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
                                 color: Get.isDarkMode ? buttonColor : mainColor,
@@ -66,7 +67,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                               width: 3,
                             ),
                             TextUtils(
-                                text: 'UP',
+                                text: 'UP'.tr,
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
                                 color: Get.isDarkMode
@@ -84,7 +85,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                           validator: (value) {
                             if (value.toString().length <= 2 ||
                                 !RegExp(validationName).hasMatch(value)) {
-                              return ('Enter valid name');
+                              return ('Enter valid name'.tr);
                             } else {
                               return null;
                             }
@@ -101,7 +102,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                                   size: 30,
                                 ),
                           suffixIcon: const Text(''),
-                          hintText: "Enter your User Name",
+                          hintText: "Enter your User Name".tr,
                         ),
                         SizedBox(height: 20),
                         AuthTextFormFailed(
@@ -109,7 +110,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                           obscureText: false,
                           validator: (value) {
                             if (!RegExp(validationEmail).hasMatch(value)) {
-                              return ('invalid email');
+                              return ('invalid email'.tr);
                             } else {
                               return null;
                             }
@@ -126,7 +127,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                                   size: 30,
                                 ),
                           suffixIcon: const Text(''),
-                          hintText: "Enter your Email",
+                          hintText: "Enter your Email".tr,
                         ),
                         SizedBox(height: 20),
                         AuthTextFormFailed(
@@ -134,7 +135,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                           obscureText: false,
                           validator: (value) {
                             if (!RegExp(validationPhone).hasMatch(value)) {
-                              return ('invalid phone');
+                              return ('invalid phone'.tr);
                             } else {
                               return null;
                             }
@@ -151,7 +152,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                                   size: 30,
                                 ),
                           suffixIcon: const Text(''),
-                          hintText: "Enter your phone number",
+                          hintText: "Enter your phone number".tr,
                         ),
                         SizedBox(
                           height: 20,
@@ -162,7 +163,8 @@ class _SignUpScreensState extends State<SignUpScreens> {
                             obscureText: controller.isvisibility ? false : true,
                             validator: (value) {
                               if (value.toString().length < 6) {
-                                return ('password should be long or equal to 6 characters');
+                                return ('password should be long or equal to 6 characters'
+                                    .tr);
                               } else {
                                 return null;
                               }
@@ -191,7 +193,7 @@ class _SignUpScreensState extends State<SignUpScreens> {
                                         Icons.visibility,
                                         color: Colors.black,
                                       )),
-                            hintText: "Enter your Password",
+                            hintText: "Enter your Password".tr,
                           );
                         }),
                         SizedBox(
@@ -204,12 +206,12 @@ class _SignUpScreensState extends State<SignUpScreens> {
                         ),
                         GetBuilder<AuthController>(builder: (_) {
                           return AuthButton(
-                              text: 'Sign Up',
+                              text: 'Sign Up'.tr,
                               onPressed: () async {
                                 //check box is not checking
                                 if (controller.ischeckbox == false) {
-                                  Get.snackbar("Check Box",
-                                      "please Accept terms & conditions",
+                                  Get.snackbar("Check Box".tr,
+                                      "please Accept terms & conditions".tr,
                                       snackPosition: SnackPosition.BOTTOM,
                                       backgroundColor: Colors.green,
                                       colorText: Colors.white);
@@ -233,8 +235,8 @@ class _SignUpScreensState extends State<SignUpScreens> {
                   ),
                 ),
                 ContainerUnder(
-                  text: 'Already Have account ?',
-                  textundline: 'Log in',
+                  text: 'Already Have account ?'.tr,
+                  textundline: 'Log in'.tr,
                   onPressed: () {
                     Get.offNamed(Routs.lognin_screens);
                   },
