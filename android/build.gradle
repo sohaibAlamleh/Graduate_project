@@ -1,0 +1,51 @@
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.13'
+        classpath("com.android.tools.build:gradle:3.5.3")
+
+//        classpath 'com.google.gms:google-services:4.3.3
+        classpath( fileTree(include: ['*.jar'], dir: 'libs'))
+        classpath 'com.android.support:appcompat-v7:26.1.0'
+        classpath 'com.android.support.constraint:constraint-layout:1.0.2'
+        classpath 'com.google.firebase:firebase-auth:11.8.0'
+        classpath 'com.google.firebase:firebase-database:11.8.0'
+        classpath 'com.android.support:support-v4:26.1.0'
+        classpath 'junit:junit:4.12'
+        classpath 'com.android.support:design:26.1.0'
+//        classpath 'com.github.joielechong:countrycodepicker:2.1.5'
+        classpath 'com.jaredrummler:material-spinner:1.2.4'
+//        classpath 'hanks.xyz:htextview-library:0.1.5'
+        //   classpath 'com.firebaseui:firebase-ui-database:1.2.0'
+        classpath 'com.google.android.gms:play-services:11.8.0'
+        classpath 'com.facebook.android:facebook-login:5.+'
+        classpath 'com.facebook.android:facebook-core:5.+'
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boat Rant</string>
+    <string name="facebook_app_id">1228046517744090</string>
+    <string name="fb_login_protocol_scheme">fb1228046517744090</string>
+    <string name="facebook_client_token">56789</string>
+    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
+</resources>

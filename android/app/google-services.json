@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "345464755407",
+    "project_id": "boat-rent-project",
+    "storage_bucket": "boat-rent-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345464755407:android:e98bbcc8e5fd39710fd3ba",
+        "android_client_info": {
+          "package_name": "com.example.boat_rent_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345464755407-cn7ugtpar1fce18pp3an3vlgc4k0iqm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZQkYK8GPVTOo2rI4Aa1t17W-QsgX_w9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345464755407-cn7ugtpar1fce18pp3an3vlgc4k0iqm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
